@@ -53,7 +53,7 @@ export class PropertyComponent implements OnInit {
 
   selectForUpdate(property:Property){
     this.buttonUpdateOrSave = "Update this Property"
-    this.propertyForm = {id:property.id,address:property.address,postcode:property.postcode,latitude:property.latitude,longitude:property.latitude,
+    this.propertyForm = {id:property.id,address:property.address,postcode:property.postcode,latitude:property.latitude,longitude:property.longitude,
       bedroom_count:property.bedroom_count,surface:property.surface}
     this.save = false 
   }

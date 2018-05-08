@@ -5,8 +5,8 @@ import { PropertyComponent }   from './property/property.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/properties', pathMatch: 'full' },
-  { path: 'properties', component: PropertyComponent },
+  { path: '', redirectTo: '/index.html', pathMatch: 'full' },
+  { path: 'index.html', component: PropertyComponent },
 
 ];
 
