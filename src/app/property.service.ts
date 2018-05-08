@@ -23,7 +23,7 @@ export class PropertyService {
 
 
 
-   private propertiesURL = 'http://localhost:9000/v1/properties';  // URL to web api
+   private propertiesURL = '/v1/properties';  // URL to web api
  
   constructor( private http: HttpClient) { }
  
