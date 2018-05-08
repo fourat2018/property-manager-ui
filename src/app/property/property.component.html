@@ -1,0 +1,157 @@
+<div class="d-flex justify-content-between">
+
+
+<div class="col-4">
+
+<form class="">
+<fieldset>
+
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+
+  <label class="control-label" for="">Address</label>  
+  <input id="" name="address" type="text" placeholder="" class="form-control input-md" required="" [(ngModel)]="propertyForm.address" required>
+    
+  </div>
+   <div class="form-group col-md-6">
+
+  <label class=" control-label" for="">Post Code</label>  
+  <input id="" name="postcode" type="text" placeholder="" class="form-control input-md" required="" [(ngModel)]="propertyForm.postcode" required>
+    
+  </div>
+
+<!-- Text input-->
+  <div class="form-group col-md-6">
+
+  <label class="control-label" for="">Latitude</label>  
+  <input id="" name="latitude" type="text" placeholder="" class="form-control input-md" required="" [(ngModel)]="propertyForm.latitude" required>
+    
+  </div>
+
+  <div class="form-group col-md-6 ">
+  <label class="control-label" for="">Longitude</label>  
+  <input id="" name="longitude" type="text" placeholder="" class="form-control input-md" [(ngModel)]="propertyForm.longitude" required>
+    
+  </div>
+
+  </div>
+
+
+
+
+<!-- Text input-->
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Bedroom number</label>  
+  <div class="col-md-4">
+  <input id="" name="bedroom_count" type="text" placeholder="" class="form-control input-md" required=""[(ngModel)]="propertyForm.bedroom_count">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">Surface</label>  
+  <div class="col-md-4">
+  <input id="" name="surface" type="text" placeholder="" class="form-control input-md" required=""[(ngModel)]="propertyForm.surface">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <button id="" name="" class="btn btn-primary"  (click)="saveOrUpdatePushed()">{{buttonUpdateOrSave}}</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+
+
+
+
+<div>
+<table class="table table-striped">
+<button class="btn btn-primary" (click)="getProperties()"><span class="glyphicon glyphicon-refresh"  ></span> Refresh</button>
+
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col}}
+    </th>
+
+  </tr>
+   <tr *ngFor="let property of properties ">
+    <td>
+      {{property.id}} 
+    </td>
+    <td   >{{property.address}} </td>
+    <td  >{{property.postcode}}  </td>
+    <td  >{{property.latitude}} </td>
+    <td > {{property.longitude}} </td>
+    <td > {{property.bedroom_count}}</td>
+    <td >{{property.surface}}</td>
+    <td>
+        <button type="button" class="btn btn-info" (click)="selectForUpdate(property)" >Update</button>
+        <button type="button" class="btn btn-danger" (click)="delete(property)">Delete</button>
+        <button type="button" class="btn btn-success" (click)="getPrices(property)">Prices</button>
+
+
+    </td>
+  </tr>
+  </table>
+</div>
+</div>
+
+<h5>{{priceTitle()}}</h5>
+
+<div class = "col-3">
+
+<form class="">
+<fieldset>
+
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+
+  <label class="control-label" for="">Price</label>  
+  <input id="" name="price" type="text" placeholder="" class="form-control input-md" required="" [(ngModel)]="priceToAdd.price">
+    
+  </div>
+   <div class="form-group col-md-6">
+
+  <label class=" control-label" for="">Date</label>  
+  <input id="" name="date" type="date" placeholder="" class="form-control input-md"   required=""  [(ngModel)]="priceToAdd.date">
+    
+  </div>
+  <div class="form-group col-md-6">
+      <button id="" name="" class="btn btn-primary" (click)="addPrice()" >Add a new Price </button>
+</div>
+
+  </div>
+  </fieldset>
+  </form>
+  </div>
+
+  <div>
+<table class="table table-striped">
+  <tr>
+    <th *ngFor="let col of Pricecolumns">
+      {{col}}
+    </th>
+
+  </tr>
+   <tr *ngFor="let price of prices ">
+  
+    <td  >{{price.price}} </td>
+    <td >{{price.date}}  </td>
+   
+  </tr>
+  </table>
+</div>
+
